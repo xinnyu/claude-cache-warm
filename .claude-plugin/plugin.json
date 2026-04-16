@@ -1,0 +1,5 @@
+{
+  "name": "cache-warm",
+  "description": "Keep Anthropic prompt cache warm during idle periods, avoiding expensive cache misses on large contexts (22.5x cost difference)",
+  "version": "1.0.0"
+}

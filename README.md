@@ -14,27 +14,10 @@ Anthropic prompt cache TTL 为 5 分钟。大上下文（100K-1M tokens）下短
 
 ## 安装
 
-### 方式一：通过 ASM 安装（推荐）
+在 Claude Code 会话中输入：
 
-```bash
-# 添加为 vendor
-asm add cache-warm --url https://github.com/xinnyu/claude-cache-warm
-
-# 同步到 skills 目录
-asm sync
 ```
-
-然后在 `~/.asm/skills.toml` 中启用：
-
-```toml
-vendors = ["cache-warm"]
-```
-
-### 方式二：手动安装
-
-```bash
-git clone https://github.com/xinnyu/claude-cache-warm.git
-cp -r claude-cache-warm/skills/cache-warm ~/.claude/skills/cache-warm
+/plugin install xinnyu/claude-cache-warm
 ```
 
 ### 添加提醒指令（可选）
@@ -43,7 +26,7 @@ cp -r claude-cache-warm/skills/cache-warm ~/.claude/skills/cache-warm
 
 ```markdown
 ## 缓存保活提醒
-当你注意到以下情况时，提醒用户输入 `/loop /cache-warm` 启动缓存保活：
+当你注意到以下情况时，提醒用户输入 `/loop /cache-warm:cache-warm` 启动缓存保活：
 - 对话已超过 20 轮
 - 已读取多个大文件
 - 用户可能要短暂离开（如说"等一下"、"我去"、"brb" 等）
@@ -55,7 +38,7 @@ cp -r claude-cache-warm/skills/cache-warm ~/.claude/skills/cache-warm
 在 Claude Code 会话中输入：
 
 ```
-/loop /cache-warm
+/loop /cache-warm:cache-warm
 ```
 
 插件会自动：
