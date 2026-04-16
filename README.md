@@ -14,14 +14,30 @@ Anthropic prompt cache TTL 为 5 分钟。大上下文（100K-1M tokens）下短
 
 ## 安装
 
-### 1. 复制 Skill 文件
+### 方式一：通过 ASM 安装（推荐）
+
+```bash
+# 添加为 vendor
+asm add cache-warm --url https://github.com/xinnyu/claude-cache-warm
+
+# 同步到 skills 目录
+asm sync
+```
+
+然后在 `~/.asm/skills.toml` 中启用：
+
+```toml
+vendors = ["cache-warm"]
+```
+
+### 方式二：手动安装
 
 ```bash
 git clone https://github.com/xinnyu/claude-cache-warm.git
 cp -r claude-cache-warm/skills/cache-warm ~/.claude/skills/cache-warm
 ```
 
-### 2. 添加提醒指令（可选）
+### 添加提醒指令（可选）
 
 将以下内容添加到 `~/.claude/CLAUDE.md`，让模型在合适时机自动提醒你启动保活：
 

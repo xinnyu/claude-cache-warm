@@ -1,6 +1,6 @@
 ---
 name: cache-warm
-description: "Use when user invokes /loop to keep prompt cache warm during idle periods, avoiding expensive cache misses on large contexts"
+description: "Keep Anthropic prompt cache warm during idle periods to avoid expensive cache misses. Use when user says /cache-warm, /loop /cache-warm, '保活', 'keep cache warm', 'cache keep-alive', or when setting up idle-time cache warming for large contexts."
 ---
 
 # Cache Keep-Alive
